@@ -1,0 +1,232 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns = "http://www.w3.org/1999/xhtml">
+<head>
+<title>吉他大师</title>
+<style type="text/css">
+body{
+    background-image:url("./images/background_guitarVirtuoso.jpg");
+    font-family:Arial, "Microsoft YaHei";
+    font-size:16px;
+    line-height:150%;
+    color:#000000;
+    }
+a:link {
+	color: #CC3300;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #666666;
+}
+a:hover {
+	text-decoration: underline;
+	color: #9900FF;
+}
+a:active {
+	text-decoration: none;
+}
+#Layer1 {
+	position:absolute;
+	width:171px;
+	height:117px;
+	z-index:1;
+	left: 413px;
+	top: 504px;
+}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/JavaScript">
+<!--
+function MM_timelinePlay(tmLnName, myID) { //v1.2
+  //Copyright 1998, 1999, 2000, 2001, 2002, 2003, 2004 Macromedia, Inc. All rights reserved.
+  var i,j,tmLn,props,keyFrm,sprite,numKeyFr,firstKeyFr,propNum,theObj,firstTime=false;
+  if (document.MM_Time == null) MM_initTimelines(); //if *very* 1st time
+  tmLn = document.MM_Time[tmLnName];
+  if (myID == null) { myID = ++tmLn.ID; firstTime=true;}//if new call, incr ID
+  if (myID == tmLn.ID) { //if Im newest
+    setTimeout('MM_timelinePlay("'+tmLnName+'",'+myID+')',tmLn.delay);
+    fNew = ++tmLn.curFrame;
+    for (i=0; i<tmLn.length; i++) {
+      sprite = tmLn[i];
+      if (sprite.charAt(0) == 's') {
+        if (sprite.obj) {
+          numKeyFr = sprite.keyFrames.length; firstKeyFr = sprite.keyFrames[0];
+          if (fNew >= firstKeyFr && fNew <= sprite.keyFrames[numKeyFr-1]) {//in range
+            keyFrm=1;
+            for (j=0; j<sprite.values.length; j++) {
+              props = sprite.values[j]; 
+              if (numKeyFr != props.length) {
+                if (props.prop2 == null) sprite.obj[props.prop] = props[fNew-firstKeyFr];
+                else        sprite.obj[props.prop2][props.prop] = props[fNew-firstKeyFr];
+              } else {
+                while (keyFrm<numKeyFr && fNew>=sprite.keyFrames[keyFrm]) keyFrm++;
+                if (firstTime || fNew==sprite.keyFrames[keyFrm-1]) {
+                  if (props.prop2 == null) sprite.obj[props.prop] = props[keyFrm-1];
+                  else        sprite.obj[props.prop2][props.prop] = props[keyFrm-1];
+        } } } } }
+      } else if (sprite.charAt(0)=='b' && fNew == sprite.frame) eval(sprite.value);
+      if (fNew > tmLn.lastFrame) tmLn.ID = 0;
+  } }
+}
+
+function MM_timelineGoto(tmLnName, fNew, numGotos) { //v2.0
+  //Copyright 1998, 1999, 2000, 2001, 2002, 2003, 2004 Macromedia, Inc. All rights reserved.
+  var i,j,tmLn,props,keyFrm,sprite,numKeyFr,firstKeyFr,lastKeyFr,propNum,theObj;
+  if (document.MM_Time == null) MM_initTimelines(); //if *very* 1st time
+  tmLn = document.MM_Time[tmLnName];
+  if (numGotos != null)
+    if (tmLn.gotoCount == null) tmLn.gotoCount = 1;
+    else if (tmLn.gotoCount++ >= numGotos) {tmLn.gotoCount=0; return}
+  jmpFwd = (fNew > tmLn.curFrame);
+  for (i = 0; i < tmLn.length; i++) {
+    sprite = (jmpFwd)? tmLn[i] : tmLn[(tmLn.length-1)-i]; //count bkwds if jumping back
+    if (sprite.charAt(0) == "s") {
+      numKeyFr = sprite.keyFrames.length;
+      firstKeyFr = sprite.keyFrames[0];
+      lastKeyFr = sprite.keyFrames[numKeyFr - 1];
+      if ((jmpFwd && fNew<firstKeyFr) || (!jmpFwd && lastKeyFr<fNew)) continue; //skip if untouchd
+      for (keyFrm=1; keyFrm<numKeyFr && fNew>=sprite.keyFrames[keyFrm]; keyFrm++);
+      for (j=0; j<sprite.values.length; j++) {
+        props = sprite.values[j];
+        if (numKeyFr == props.length) propNum = keyFrm-1 //keyframes only
+        else propNum = Math.min(Math.max(0,fNew-firstKeyFr),props.length-1); //or keep in legal range
+        if (sprite.obj != null) {
+          if (props.prop2 == null) sprite.obj[props.prop] = props[propNum];
+          else        sprite.obj[props.prop2][props.prop] = props[propNum];
+      } }
+    } else if (sprite.charAt(0)=='b' && fNew == sprite.frame) eval(sprite.value);
+  }
+  tmLn.curFrame = fNew;
+  if (tmLn.ID == 0) eval('MM_timelinePlay(tmLnName)');
+}
+
+function MM_initTimelines() { //v4.0
+    //MM_initTimelines() Copyright 1997 Macromedia, Inc. All rights reserved.
+    var ns = navigator.appName == "Netscape";
+    var ns4 = (ns && parseInt(navigator.appVersion) == 4);
+    var ns5 = (ns && parseInt(navigator.appVersion) > 4);
+    var macIE5 = (navigator.platform ? (navigator.platform == "MacPPC") : false) && (navigator.appName == "Microsoft Internet Explorer") && (parseInt(navigator.appVersion) >= 4);
+    document.MM_Time = new Array(1);
+    document.MM_Time[0] = new Array(2);
+    document.MM_Time["Timeline1"] = document.MM_Time[0];
+    document.MM_Time[0].MM_Name = "Timeline1";
+    document.MM_Time[0].fps = 10;
+    document.MM_Time[0][0] = new String("behavior");
+    document.MM_Time[0][0].frame = 181;
+    document.MM_Time[0][0].value = "MM_timelineGoto('Timeline1','1')";
+    document.MM_Time[0][1] = new String("sprite");
+    document.MM_Time[0][1].slot = 1;
+    if (ns4)
+        document.MM_Time[0][1].obj = document["Layer1"];
+    else if (ns5)
+        document.MM_Time[0][1].obj = document.getElementById("Layer1");
+    else
+        document.MM_Time[0][1].obj = document.all ? document.all["Layer1"] : null;
+    document.MM_Time[0][1].keyFrames = new Array(1, 30, 60, 90, 120, 180);
+    document.MM_Time[0][1].values = new Array(4);
+    if (ns5 || macIE5)
+        document.MM_Time[0][1].values[0] = new Array("10px", "13px", "16px", "18px", "20px", "23px", "25px", "27px", "30px", "32px", "34px", "37px", "39px", "42px", "45px", "48px", "50px", "54px", "57px", "60px", "64px", "68px", "72px", "77px", "82px", "87px", "93px", "99px", "105px", "112px", "120px", "128px", "136px", "145px", "154px", "162px", "171px", "181px", "190px", "200px", "210px", "220px", "230px", "241px", "252px", "263px", "274px", "285px", "296px", "307px", "319px", "330px", "341px", "353px", "365px", "377px", "389px", "401px", "413px", "425px", "436px", "447px", "458px", "468px", "478px", "488px", "497px", "506px", "515px", "523px", "531px", "539px", "547px", "555px", "562px", "569px", "576px", "583px", "590px", "597px", "604px", "611px", "618px", "625px", "632px", "639px", "646px", "653px", "660px", "667px", "674px", "680px", "687px", "694px", "701px", "708px", "715px", "723px", "730px", "737px", "744px", "751px", "759px", "766px", "773px", "780px", "787px", "794px", "802px", "809px", "817px", "825px", "834px", "842px", "850px", "857px", "861px", "855px", "843px", "829px", "819px", "809px", "798px", "788px", "777px", "766px", "755px", "744px", "733px", "721px", "710px", "698px", "686px", "674px", "662px", "650px", "637px", "625px", "612px", "599px", "586px", "573px", "559px", "546px", "532px", "518px", "504px", "490px", "475px", "461px", "446px", "431px", "416px", "401px", "386px", "371px", "356px", "341px", "326px", "311px", "296px", "281px", "266px", "251px", "236px", "221px", "206px", "190px", "175px", "160px", "145px", "130px", "115px", "100px", "85px", "70px", "55px", "40px", "25px", "10px");
+    else
+        document.MM_Time[0][1].values[0] = new Array(10,13,16,18,20,23,25,27,30,32,34,37,39,42,45,48,50,54,57,60,64,68,72,77,82,87,93,99,105,112,120,128,136,145,154,162,171,181,190,200,210,220,230,241,252,263,274,285,296,307,319,330,341,353,365,377,389,401,413,425,436,447,458,468,478,488,497,506,515,523,531,539,547,555,562,569,576,583,590,597,604,611,618,625,632,639,646,653,660,667,674,680,687,694,701,708,715,723,730,737,744,751,759,766,773,780,787,794,802,809,817,825,834,842,850,857,861,855,843,829,819,809,798,788,777,766,755,744,733,721,710,698,686,674,662,650,637,625,612,599,586,573,559,546,532,518,504,490,475,461,446,431,416,401,386,371,356,341,326,311,296,281,266,251,236,221,206,190,175,160,145,130,115,100,85,70,55,40,25,10);
+    document.MM_Time[0][1].values[0].prop = "left";
+    if (ns5 || macIE5)
+        document.MM_Time[0][1].values[1] = new Array("100px", "107px", "114px", "121px", "128px", "135px", "142px", "149px", "156px", "163px", "170px", "177px", "184px", "191px", "197px", "204px", "211px", "218px", "225px", "232px", "239px", "246px", "253px", "260px", "267px", "274px", "281px", "288px", "295px", "302px", "309px", "317px", "324px", "332px", "339px", "347px", "354px", "362px", "369px", "377px", "385px", "392px", "400px", "407px", "415px", "422px", "430px", "437px", "443px", "450px", "456px", "462px", "468px", "473px", "478px", "482px", "485px", "488px", "490px", "491px", "491px", "489px", "486px", "483px", "479px", "474px", "469px", "463px", "457px", "451px", "445px", "438px", "431px", "424px", "417px", "410px", "403px", "396px", "388px", "381px", "374px", "366px", "359px", "352px", "344px", "337px", "330px", "323px", "316px", "309px", "303px", "298px", "293px", "288px", "283px", "278px", "273px", "268px", "263px", "259px", "254px", "250px", "245px", "240px", "236px", "231px", "226px", "221px", "216px", "211px", "205px", "199px", "192px", "184px", "175px", "165px", "152px", "139px", "131px", "125px", "122px", "120px", "118px", "117px", "115px", "114px", "113px", "112px", "111px", "110px", "109px", "108px", "108px", "107px", "106px", "106px", "105px", "105px", "104px", "104px", "104px", "103px", "103px", "103px", "102px", "102px", "102px", "102px", "101px", "101px", "101px", "101px", "101px", "101px", "101px", "101px", "101px", "101px", "101px", "101px", "101px", "101px", "101px", "101px", "101px", "101px", "101px", "101px", "101px", "101px", "101px", "101px", "101px", "101px", "101px", "101px", "101px", "101px", "100px", "100px");
+    else
+        document.MM_Time[0][1].values[1] = new Array(100,107,114,121,128,135,142,149,156,163,170,177,184,191,197,204,211,218,225,232,239,246,253,260,267,274,281,288,295,302,309,317,324,332,339,347,354,362,369,377,385,392,400,407,415,422,430,437,443,450,456,462,468,473,478,482,485,488,490,491,491,489,486,483,479,474,469,463,457,451,445,438,431,424,417,410,403,396,388,381,374,366,359,352,344,337,330,323,316,309,303,298,293,288,283,278,273,268,263,259,254,250,245,240,236,231,226,221,216,211,205,199,192,184,175,165,152,139,131,125,122,120,118,117,115,114,113,112,111,110,109,108,108,107,106,106,105,105,104,104,104,103,103,103,102,102,102,102,101,101,101,101,101,101,101,101,101,101,101,101,101,101,101,101,101,101,101,101,101,101,101,101,101,101,101,101,101,101,100,100);
+    document.MM_Time[0][1].values[1].prop = "top";
+    if (!ns4) {
+        document.MM_Time[0][1].values[0].prop2 = "style";
+        document.MM_Time[0][1].values[1].prop2 = "style";
+    }
+    if (ns5 || macIE5)
+        document.MM_Time[0][1].values[2] = new Array("200px", "199px", "198px", "197px", "196px", "195px", "194px", "193px", "192px", "191px", "190px", "189px", "188px", "187px", "186px", "185px", "184px", "183px", "182px", "181px", "180px", "179px", "178px", "177px", "176px", "175px", "174px", "173px", "172px", "171px", "171px", "172px", "173px", "174px", "175px", "176px", "177px", "178px", "179px", "180px", "181px", "182px", "183px", "184px", "185px", "186px", "187px", "188px", "189px", "190px", "191px", "192px", "193px", "194px", "195px", "196px", "197px", "198px", "199px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px", "200px");
+    else
+        document.MM_Time[0][1].values[2] = new Array(200,199,198,197,196,195,194,193,192,191,190,189,188,187,186,185,184,183,182,181,180,179,178,177,176,175,174,173,172,171,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,192,193,194,195,196,197,198,199,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200);
+    document.MM_Time[0][1].values[2].prop = "width";
+    if (!ns4)
+        document.MM_Time[0][1].values[2].prop2 = "style";
+    if (ns5 || macIE5)
+        document.MM_Time[0][1].values[3] = new Array("115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "116px", "116px", "116px", "116px", "116px", "116px", "116px", "116px", "116px", "116px", "116px", "116px", "116px", "116px", "117px", "116px", "116px", "116px", "116px", "116px", "116px", "116px", "116px", "116px", "116px", "116px", "116px", "116px", "116px", "116px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px", "115px");
+    else
+        document.MM_Time[0][1].values[3] = new Array(115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,116,116,116,116,116,116,116,116,116,116,116,116,116,116,117,116,116,116,116,116,116,116,116,116,116,116,116,116,116,116,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115,115);
+    document.MM_Time[0][1].values[3].prop = "height";
+    if (!ns4)
+        document.MM_Time[0][1].values[3].prop2 = "style";
+    document.MM_Time[0].lastFrame = 181;
+    for (i=0; i<document.MM_Time.length; i++) {
+        document.MM_Time[i].ID = null;
+        document.MM_Time[i].curFrame = 0;
+        document.MM_Time[i].delay = 1000/document.MM_Time[i].fps;
+    }
+}
+//-->
+
+function showAddie(){
+    var addie = document.getElementById("showVirtuoso");
+    addie.src = "virtuosoHtml/addie.html";
+    }
+function showFernando(){
+    var fernando = document.getElementById("showVirtuoso");
+    fernando.src = "virtuosoHtml/fernando.html";
+    }
+function showPaganini(){
+    var paganini = document.getElementById("showVirtuoso");
+    paganini.src = "virtuosoHtml/paganini.html";
+    }
+function showGiuliani(){
+    var giuliani = document.getElementById("showVirtuoso");
+    giuliani.src = "virtuosoHtml/giuliani.html";
+    }
+function showTrrega(){
+    var trrega = document.getElementById("showVirtuoso");
+    trrega.src = "virtuosoHtml/trrega.html";
+    }
+function showYang(){
+    var yang = document.getElementById("showVirtuoso");
+    yang.src = "virtuosoHtml/yang.html";
+    }
+function showLi(){
+    var li = document.getElementById("showVirtuoso");
+    li.src = "virtuosoHtml/li.html";
+    }
+</script>
+</head>
+<body onload="MM_timelinePlay('Timeline1')">
+<table width="1024" border="0">
+  <tr>
+    <td width="50%">
+        <img src="images/guitarLogo.png" width="200" height="100" align="left" /> 
+    </td>
+    <td width="50%">
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="400" height="100" align="right">
+        <param name="movie" value="images/guitarVirtuoso.swf" />
+        <param name="quality" value="high" />
+        <embed src="images/guitarVirtuoso.swf" width="400" height="100" align="right" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"></embed>
+        </object>
+    </td>
+  </tr>
+  <tr>
+    <td width="30%">      
+        <div id="Layer1" style="left: 10px; top: 100px; width: 200px; height: 115px;">
+        <div align="center"><img src="images/playGuitar.gif" name="Image1" width="200" height="112" /></div>
+        </div>
+        <div>
+            <p><img src="images/addie_bt.png" width="200" height="61" onmouseover="showAddie()"/></p>
+            <p><img src="images/fernando_bt.png" width="200" height="61" hspace="5" vspace="5" onmouseover="showFernando()"/></p>
+            <p><img src="images/paganini_bt.png" width="200" height="61" hspace="5" vspace="5" onmouseover="showPaganini()"/></p>
+            <p><img src="images/giuliani_bt.png" width="200" height="61" hspace="5" vspace="5" onmouseover="showGiuliani()"/></p>
+            <p><img src="images/trrega_bt.png" width="200" height="61" hspace="5" vspace="5" onmouseover="showTrrega()"/></p>
+            <p><img src="images/yang_bt.png" width="200" height="61" hspace="5" vspace="5" onmouseover="showYang()"/></p>
+            <p><img src="images/li_bt.png" width="200" height="61" hspace="5" vspace="5" onmouseover="showLi()"/></p>
+        </div> 
+    </td>
+    <td width="70%">
+        <div>
+            <iframe id="showVirtuoso" height=700px width=600px 
+            frameborder="0" src="virtuosoHtml/addie.html"></iframe>
+        </div>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
